@@ -72,10 +72,10 @@ span{
     background-clip: text;
     color:transparent;
 }
-menu{
+#menu{
     color: white;
     font-size: 3em;
-    display: block;
+    display: none;
 }
 section{
     min-height: 100vh;
@@ -389,7 +389,7 @@ footer{
             gap: 3em;
         }
         #projects .header{
-font-size: 3em;
+       font-size: 3em;
         }
         #contact .header{
             font-size: 3em;
