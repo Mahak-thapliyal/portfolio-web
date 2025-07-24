@@ -41,7 +41,7 @@ nav ul a{
 nav ul a:hover{
     opacity: 1;
 }
-logo{
+.logo{
     font-size: 2em;
     color: white;
     font-weight: 800;
@@ -67,7 +67,7 @@ logo{
     color: var(--background);
 }
 span{
-    font-size: 2em;
+    font-size: 1em;
     background: linear-gradient(to right, #2dde0e,#079ea6);
     background-clip: text;
     color:transparent;
@@ -124,8 +124,8 @@ section{
     display: flex;
     gap:1em;
 }
-.btn-box ,btn:nth-of-type(2):hover{
-    background-color: (--background);
+.btn-box .btn:nth-of-type(2):hover{
+    background-color: var(--background);
 color: white;
 }
 ::-webkit-scrollbar{
@@ -315,7 +315,7 @@ footer{
 .col-right .social-icons{
     font-size: 2em;
     transition: 0.2s ease-in-out;
-    cursor:pomter;
+    cursor:pointer;
 }
 .social-icons i:hover{
     color:white;
@@ -383,7 +383,7 @@ footer{
             font-size: 1.5em;
         }
           #home img{
-            width: 322vw;
+            width: 60vw;
         }
         #about .skills{
             gap: 3em;
