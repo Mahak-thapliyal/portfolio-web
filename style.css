@@ -279,6 +279,7 @@ color: white;
     border: 3px solid rgb(100,100,100);
 }
 .box {
+    height:510px;
   background-color: #121212; /* Optional for uniform dark boxes */
   color: #fff;
   border-radius: 12px;
@@ -348,10 +349,12 @@ form input:focus{
     background-color: rgb(229,229,229);
 }
 .chatbox {
+    
   position: fixed;
   bottom: 20px;
   right: 20px;
-  width: 200px;
+  width: 150px;
+  height: 290px;
   background: #1a1a1a;
   color: #0f0;
   border-radius: 10px;

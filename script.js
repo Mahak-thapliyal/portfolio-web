@@ -66,6 +66,7 @@ function generateResponse(msg) {
   else if (msg.includes("skills")) response = "Python, C++, HTML, CSS, JavaScript, ML";
   else if (msg.includes("college")) response = "CGC Landran – Computer Science Engineering!";
   else if (msg.includes("resume")) response = "Click the 'Download Resume' button above!";
+  else if (msg.includes("projects")) response = "Made three major projects, Hr and job recruitment web app, scam detection and voice assistant you can read about them!";
 
   setTimeout(() => addMessage("MahakBot", response), 500);
 }
