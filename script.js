@@ -38,3 +38,34 @@ document.addEventListener("DOMContentLoaded", () => {
       });
   });
 });
+
+function handleChat(event) {
+  if (event.key === "Enter") {
+    const input = document.getElementById("chat-input");
+    const msg = input.value.trim();
+    if (!msg) return;
+
+    addMessage("You", msg);
+    generateResponse(msg.toLowerCase());
+    input.value = "";
+  }
+}
+
+function addMessage(sender, text) {
+  const chat = document.getElementById("chat-messages");
+  const message = document.createElement("div");
+ message.innerHTML = `<strong>${sender}:</strong> ${text}`;
+  chat.appendChild(message);
+  chat.scrollTop = chat.scrollHeight;
+}
+
+function generateResponse(msg) {
+  let response = "Hmm, I’m still learning 😅";
+
+  if (msg.includes("name")) response = "I'm Mahak, a Data Science enthusiast!";
+  else if (msg.includes("skills")) response = "Python, C++, HTML, CSS, JavaScript, ML";
+  else if (msg.includes("college")) response = "CGC Landran – Computer Science Engineering!";
+  else if (msg.includes("resume")) response = "Click the 'Download Resume' button above!";
+
+  setTimeout(() => addMessage("MahakBot", response), 500);
+}
