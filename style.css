@@ -524,6 +524,53 @@ footer{
             align-items: baseline;
         }
 }
+@media screen and (max-width: 480px) {
+  body {
+    font-size: 14px;
+    padding: 0;
+    margin: 0;
+  }
+
+  nav {
+    padding: 1em;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #home img, 
+  #about img {
+    width: 80vw;
+    margin: 1em auto;
+  }
+
+  section {
+    padding: 2em 1em;
+  }
+
+  .info-box h1 {
+    font-size: 2em;
+  }
+
+  .btn {
+    font-size: 0.9em;
+    padding: 0.5em 1em;
+  }
+
+  .projects-container {
+    grid-template-columns: 1fr;
+  }
+
+  form input {
+    width: 100%;
+    padding: 1em;
+  }
+
+  footer {
+    flex-direction: column;
+    padding: 2em 1em;
+    gap: 2em;
+  }
+}
 
 
 
