@@ -495,6 +495,9 @@ footer{
     
 }
 @media(max-width:768px){
+    body{
+        padding:120px;
+    }
  #home h1{
             font-size: 2.5em;
         }
@@ -526,9 +529,26 @@ footer{
         .input-box input{
             padding: 0.5em 1em;
         }
+          .chatbox {
+    width: 90%;
+    bottom: 10px;
+    right: 5%;
+    font-size: 14px;
+    max-height: 50vh;
+  }
+
+  .chatbox .chat-header {
+    font-size: 16px;
+  }
+
+  .chatbox .chat-message,
+  .chatbox input {
+    font-size:14px;
+}
+
         footer{
             flex-direction: column;
             gap: 5em;
             align-items: baseline;
         }
-}
+    }
