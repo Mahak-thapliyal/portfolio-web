@@ -502,7 +502,7 @@ footer{
             font-size: 1.5em;
         }
           #home img{
-            width: 24vw;
+            width: 34vw;
         }
         #about .skills{
             gap: 3em;
@@ -510,6 +510,11 @@ footer{
         #projects .header{
        font-size: 3em;
         }
+        .box {
+    width: 90%;
+    margin-bottom: 20px;
+     }
+
         #contact .header{
             font-size: 3em;
         }
