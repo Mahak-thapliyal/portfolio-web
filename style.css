@@ -527,22 +527,7 @@ footer{
         .input-box input{
             padding: 0.5em 1em;
         }
-          .chatbox {
-    width: 50%;
-    bottom: 10px;
-    right: 5%;
-    font-size: 14px;
-    max-height: 40vh;
-  }
-
-  .chatbox .chat-header {
-    font-size: 12px;
-  }
-
-  .chatbox .chat-message,
-  .chatbox input {
-    font-size:13px;
-}
+     
 
         footer{
             flex-direction: column;
