@@ -511,7 +511,9 @@ footer{
        font-size: 3em;
         }
         .box {
-    height: 800px;
+   font-size: 14px;
+   padding: 10px;
+   margin-bottom: 80px;
    
      }
 
