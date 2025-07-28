@@ -495,7 +495,6 @@ footer{
     
 }
 @media(max-width:768px){
-   
  #home h1{
             font-size: 2.5em;
         }
@@ -527,11 +526,9 @@ footer{
         .input-box input{
             padding: 0.5em 1em;
         }
-     
-
         footer{
             flex-direction: column;
             gap: 5em;
             align-items: baseline;
         }
-    }
+}
