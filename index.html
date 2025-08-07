@@ -127,12 +127,112 @@
            
         </form>
         </section>
-        <!-- Chatbox -->
-<div id="chatbox" class="chatbox">
-  <div class="chat-header">Chat with Mahak 💬</div>
-  <div id="chat-messages" class="chat-messages"></div>
-  <input type="text" id="chat-input" placeholder="Ask me something..." onkeydown="handleChat(event)">
+<div id="chatbot-toggle">💬</div>
+
+<!-- Chatbot Container -->
+<div id="chatbot">
+  <div id="chatbot-header">Chat with me! <span id="chatbot-close">×</span></div>
+  <div id="chatbot-messages"></div>
+  <div class="chat-input-wrapper">
+    <input type="text" id="chatbot-input" placeholder="Type a message..." />
+    <button id="mic-btn">🎤</button>
+  </div>
 </div>
+
+<!-- Chatbot Script -->
+<script>
+  const toggleBtn = document.getElementById("chatbot-toggle");
+  const chatbot = document.getElementById("chatbot");
+  const closeBtn = document.getElementById("chatbot-close");
+  const input = document.getElementById("chatbot-input");
+  const messages = document.getElementById("chatbot-messages");
+
+  toggleBtn.onclick = () => chatbot.style.display = "flex";
+  closeBtn.onclick = () => chatbot.style.display = "none";
+
+  input.addEventListener("keypress", function (e) {
+    if (e.key === "Enter") {
+      const userMsg = input.value.trim();
+      if (userMsg === "") return;
+
+      appendMessage("You", userMsg);
+      respond(userMsg.toLowerCase());
+      input.value = "";
+    }
+  });
+
+  function appendMessage(sender, msg) {
+    const msgDiv = document.createElement("div");
+    msgDiv.classList.add("chat-msg");
+    msgDiv.innerHTML = `<strong>${sender}:</strong> ${msg}`;
+    messages.appendChild(msgDiv);
+    messages.scrollTop = messages.scrollHeight;
+  }
+
+  function speak(msg) {
+    const speech = new SpeechSynthesisUtterance();
+    speech.text = msg;
+    speech.lang = "en-US";
+    window.speechSynthesis.speak(speech);
+  }
+
+  function respond(msg) {
+    let response = "I'm not sure how to respond to that.";
+
+    if (msg.includes("hello") || msg.includes("hi")) {
+      response = "Hi there! 😊 How can I assist you today?";
+    } else if (msg.includes("how are you")) {
+      response = "I'm doing great! Thanks for asking. How about you?";
+    } else if (msg.includes("your name")) {
+      response = "I'm Mahak's friendly chatbot assistant 🤖";
+    } else if (msg.includes("projects")) {
+      response = "Mahak has worked on several projects like HR and job recruitment models, voice assistants, and scam detection.";
+    } else if (msg.includes("skills")) {
+      response = "Mahak is skilled in HTML, CSS, JavaScript, Python, C, and C++.";
+    } else if (msg.includes("education")) {
+      response = "Mahak is currently pursuing a BTech at CGC Landran (2023–2027).";
+    } else if (msg.includes("email") || msg.includes("contact")) {
+      response = "You can contact Mahak through the contact form on this website.";
+    } else if (msg.includes("resume")) {
+      response = "You can download Mahak's resume by clicking the 'Download Resume' button.";
+    } else if (msg.includes("hobby") || msg.includes("hobbies")) {
+      response = "Mahak enjoys working on AI projects, learning new tech, and coding challenges!";
+    } else if (msg.includes("bye") || msg.includes("see you")) {
+      response = "Goodbye! 👋 Have a great day!";
+    } else if (msg.includes("thanks") || msg.includes("thank you")) {
+      response = "You're welcome! 😊";
+    }
+
+    setTimeout(() => {
+      appendMessage("Bot", response);
+      speak(response);
+    }, 500);
+  }
+
+  // Speech Recognition
+  const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+  if (SpeechRecognition) {
+    const speech = new SpeechRecognition();
+    speech.continuous = false;
+    speech.lang = "en-US";
+
+    document.getElementById("mic-btn").onclick = () => {
+      speech.start();
+    };
+
+    speech.onresult = (event) => {
+      const transcript = event.results[0][0].transcript;
+      appendMessage("You", transcript);
+      respond(transcript.toLowerCase());
+    };
+  } else {
+    const micBtn = document.getElementById("mic-btn");
+    micBtn.disabled = true;
+    micBtn.innerText = "❌";
+    micBtn.title = "Speech not supported";
+  }
+</script>
+</script>
         <footer>
             <div class="col-left">
                 <div class="col-box">
@@ -153,7 +253,7 @@
             </div>
             <div class="col-right">
                 <span>About Me</span>
-                <p >I am passionate about software engineering and data science.Currently I'm looking for opportunity that will help me to grow in my field.</p>
+                <p id="pe">I am passionate about software engineering and data science.Currently I'm looking for opportunity that will help me to grow in my field.</p>
                 <div class="social-icons">
                     <a href="https://www.linkedin.com/in/mahak-thapliyal-837ba5282?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B2YuW%2BfRbQtOQPJaaGqVhRA%3D%3D" target="_blank">
        <span><i class="bx bxl-linkedin"></i></span>
